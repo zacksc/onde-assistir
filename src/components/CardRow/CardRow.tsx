@@ -9,7 +9,7 @@ export function CardRow() {
   return (
     <View style={styles.container}>
         <CardImg style={styles.img} source={0}/>
-        <CardInfo />
+        <CardInfo style={styles.cardInfo}/>
     </View>
   );
 }

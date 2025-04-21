@@ -1,14 +1,18 @@
 import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './screens/Home/Home';
 import {Favorites} from './screens/Favorites/Favorites';
 import {History} from './screens/History/History';
 
 import { Entypo, Feather } from '@expo/vector-icons';
+import { Search } from './screens/Search/Search';
+import { Details } from './screens/Details/Details';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-export default function Routes() {
+function MainTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -51,5 +55,15 @@ export default function Routes() {
           )
         }}/>
     </Tab.Navigator>
+  )
+}
+
+export default function Routes() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='MainTabs' component={MainTabNavigator} options={{headerShown : false}}/>
+      <Stack.Screen name='Search' component={Search} options={{headerShown : false}}/>
+      <Stack.Screen name='Details' component={Details} options={{headerShown : false}}/>
+    </Stack.Navigator>
   );
 }

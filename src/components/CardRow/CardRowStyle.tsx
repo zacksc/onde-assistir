@@ -4,13 +4,13 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
     flexDirection: 'row',
     alignContent: 'space-between',
-    maxWidth: 320,
+    maxWidth: 500,
     maxHeight: 'auto',
-    paddingLeft: 30,
-    paddingRight: 90,
     gap: 10,
+    paddingTop: 20,
     paddingBottom: 30,
   },
   img: {
@@ -18,5 +18,10 @@ export const styles = StyleSheet.create({
     resizeMode: 'cover',
     width: 150,
     height: 200,
+  },
+  cardInfo: {
+    height: 240,
+    width: 200,
+    paddingLeft: 10,
   }
 });
