@@ -6,7 +6,7 @@ import { styles } from './StreamingCardStyle';
 export function StreamingCard() {
   return (
     <View style={styles.container}>
-      <Text>Disponivel em:</Text>
+      <Text style={styles.title}>Disponivel em:</Text>
       <Image />
     </View>
   );

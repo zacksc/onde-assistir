@@ -8,14 +8,47 @@ import {History} from './screens/History/History';
 import { Entypo, Feather } from '@expo/vector-icons';
 import { Search } from './screens/Search/Search';
 import { Details } from './screens/Details/Details';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+
+function HomeStackGroup(){
+
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name='Início' component={Home}/>
+      <Stack.Screen name='Busca' component={Search}/>
+      <Stack.Screen name='Details' component={Details}/>
+    </Stack.Navigator>
+  )
+}
+
+function HistoryStackGroup(){
+
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name='Histórico' component={History}/>
+      <Stack.Screen name='Detalhes' component={Details}/>
+    </Stack.Navigator>
+  )
+}
+
+function FavoritesStackGroup(){
+
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name='Favoritos' component={Favorites}/>
+      <Stack.Screen name='Detalhes' component={Details}/>
+    </Stack.Navigator>
+  )
+}
 
 function MainTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
+        headerShown : false,
         tabBarActiveTintColor: '#FFF',
         tabBarStyle:{
           paddingBottom: 50,
@@ -28,7 +61,7 @@ function MainTabNavigator() {
     >
         <Tab.Screen
         name='Historico'
-        component={History}
+        component={HistoryStackGroup}
         options={{
           tabBarIcon: ({size, color}) => (
             <Feather name="clock" size={size} color={color} />
@@ -38,7 +71,7 @@ function MainTabNavigator() {
 
         <Tab.Screen
         name='Inicio'
-        component={Home}
+        component={HomeStackGroup}
         options={{
           tabBarIcon: ({size, color}) => (
             <Entypo name="home" size={size} color={color} />
@@ -48,7 +81,7 @@ function MainTabNavigator() {
         
         <Tab.Screen
         name='Favoritos'
-        component={Favorites}
+        component={FavoritesStackGroup}
         options={{
           tabBarIcon: ({size, color}) => (
             <Entypo name="heart" size={size} color={color} />
@@ -58,12 +91,11 @@ function MainTabNavigator() {
   )
 }
 
+
 export default function Routes() {
   return (
     <Stack.Navigator>
       <Stack.Screen name='MainTabs' component={MainTabNavigator} options={{headerShown : false}}/>
-      <Stack.Screen name='Search' component={Search} options={{headerShown : false}}/>
-      <Stack.Screen name='Details' component={Details} options={{headerShown : false}}/>
     </Stack.Navigator>
   );
 }

@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     maxHeight: 'auto',
     gap: 10,
     paddingTop: 20,
-    paddingBottom: 30,
   },
   img: {
     resizeMode: 'cover',
@@ -20,12 +19,17 @@ export const styles = StyleSheet.create({
     height: 420,
   },
   cardInfo: {
-    height: 240,
-    width: 350,
+    height: 'auto',
+    width: 330,
     paddingLeft: 10,
+    paddingBottom: 10,
   },
   cardLiked: {
     flex: 1,
     flexDirection: 'row',
+    justifyContent: 'center',
+    paddingTop: 10,
+    paddingBottom: 20,
+    width: 380,
   }
 });

@@ -11,7 +11,7 @@ export function SearchButton() {
     <View style={{ alignItems: 'center', justifyContent: 'center', bottom: 480}}>
     <TouchableOpacity
     style={styles.button}
-    onPress={() => {navigation.navigate('Search')}}
+    onPress={() => {navigation.navigate('Busca')}}
     >
        <Text style={styles.buttonText}>Pesquisar</Text>
     </TouchableOpacity>
