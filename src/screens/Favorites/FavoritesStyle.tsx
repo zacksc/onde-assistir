@@ -6,11 +6,12 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
     flexDirection: 'column',
     paddingLeft: 20,
+    paddingRight: 20,
   },
   favoriteCard: {
     flex: 1,
     flexDirection: 'row',
-    width: 400,
+    width: 380,
     justifyContent: 'center',
   },
   likeBttn: {

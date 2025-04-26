@@ -1,9 +1,18 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 100,
+  },
   search: {
     alignItems: 'center', 
     justifyContent: 'center',
-    bottom: 480,
+
+  },
+  searchGroup: {
+    bottom: 280,
   }
 });

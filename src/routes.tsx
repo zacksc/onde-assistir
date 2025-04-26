@@ -19,7 +19,7 @@ function HomeStackGroup(){
     <Stack.Navigator>
       <Stack.Screen name='Início' component={Home}/>
       <Stack.Screen name='Busca' component={Search}/>
-      <Stack.Screen name='Details' component={Details}/>
+      <Stack.Screen name='Detalhes' component={Details}/>
     </Stack.Navigator>
   )
 }
@@ -47,6 +47,7 @@ function FavoritesStackGroup(){
 function MainTabNavigator() {
   return (
     <Tab.Navigator
+    initialRouteName='Inicio'
       screenOptions={{
         headerShown : false,
         tabBarActiveTintColor: '#FFF',
@@ -94,7 +95,7 @@ function MainTabNavigator() {
 
 export default function Routes() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName='MainTabs'>
       <Stack.Screen name='MainTabs' component={MainTabNavigator} options={{headerShown : false}}/>
     </Stack.Navigator>
   );

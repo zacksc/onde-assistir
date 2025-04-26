@@ -8,7 +8,7 @@ export function SearchButton() {
   const navigation = useNavigation();
 
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center', bottom: 480}}>
+    <View style={{ alignItems: 'center', justifyContent: 'center'}}>
     <TouchableOpacity
     style={styles.button}
     onPress={() => {navigation.navigate('Busca')}}
