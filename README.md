@@ -51,6 +51,7 @@ onde-assistir/
 ├── src/
 │   ├── components/     # Componentes reutilizáveis (ex: botões, cards)
 │   ├── screens/        # Telas da aplicação (ex: Home, Detalhes)
+│   ├── services/       # Serviços e integrações com APIs externas
 │   └── routes.tsx      # Definição e configuração das rotas
 ├── App.tsx             # Arquivo principal do app
 ├── app.json            # Configurações do projeto Expo
