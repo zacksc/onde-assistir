@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   search: {
     alignItems: 'center', 
-    justifyContent: 'center',
+    justifyContent: 'center'
 
   },
   searchGroup: {

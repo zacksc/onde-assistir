@@ -2,11 +2,9 @@ import React, {useState} from 'react';
 import { View, Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './HomeStyle';
-import { Logo } from '../../components/Logo/Logo'
 import { Header } from '../../components/Header/Header';
 import { SearchInput } from '../../components/SearchInput/SearchInput';
 import { SearchButton } from '../../components/SearchButton/SearchButton';
-import { Search } from '../Search/Search';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export function Home() {
@@ -27,6 +25,8 @@ export function Home() {
     style={styles.search}
     value={getSearch} 
     onChangeText={setSearch}
+    onSubmitEditing={searchScreen}
+    returnKeyType='search'
     />
     <SearchButton onPress={searchScreen} />
     </View>

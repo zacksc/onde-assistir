@@ -1,14 +1,23 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-
+import { Text, ScrollView } from 'react-native';
 import { styles } from './SearchStyle';
 import { SearchInput } from '../../components/SearchInput/SearchInput';
 import { CardRow } from '../../components/CardRow/CardRow';
-import { useNavigation } from '@react-navigation/native';
 import { Details } from '../Details/Details';
 
+type SearchRouteParams = {
+  Busca: {
+    query: string;
+  };
+}
+
+type SearchScreenRouteProp = RouteProp<SearchRouteParams, 'Busca'>;
+
 export function Search() {
-  const DetailsPage = Details();
+  const route = useRoute<SearchSceenRouteProp>();
+  const { query} = route.params;
+
+
   
   return (
     <ScrollView >

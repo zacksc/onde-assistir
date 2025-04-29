@@ -1,29 +1,28 @@
-import React, {useState} from 'react';
-import { Text, TextInput, TouchableOpacity, View, StyleProp, ViewStyle } from 'react-native';
-
-import { useNavigation } from '@react-navigation/native';
-
+import React, { useState } from 'react';
+import { TextInput, TouchableOpacity, View, StyleProp, ViewStyle, TextInputProps } from 'react-native';
 
 import { styles } from './SearchInputStyle';
 
-interface StyleSearch{
+interface StyleSearch extends TextInputProps {
+  value: string;
   style?: StyleProp<ViewStyle>;
+  onChangeText: (text: string) => void;
 }
-export function SearchInput({style} : StyleSearch) {
+export function SearchInput({ value, onChangeText, style }: StyleSearch) {
 
- 
+
 
   return (
     <>
-    {/* </><View style={{ alignItems: 'center', justifyContent: 'center', bottom: 480 }}> */}
-    <View style={ style }>
-            <TouchableOpacity style={styles.searchSection}>  
-              <TextInput
-                  placeholder='Digite aqui'
-                  placeholderTextColor="#c9c9c9"
-                />
-            </TouchableOpacity>
-            </View>
+      <View style={style}>
+        <TextInput
+          style={styles.searchSection}
+          placeholder='Digite aqui'
+          placeholderTextColor="#c9c9c9"
+          value={value}
+          onChangeText={onChangeText}
+        />
+      </View>
     </>
   );
 }
