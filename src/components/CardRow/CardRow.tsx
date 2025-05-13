@@ -1,19 +1,27 @@
 import React from 'react';
-import { TouchableOpacity, View, ViewProps } from 'react-native';
-
+import { TouchableOpacity, View, Text, Image } from 'react-native';
 import { styles } from './CardRowStyle';
-import { CardImg } from '../CardImg/CardImg';
-import { CardInfo } from '../CardInfo/CardInfo';
-import { useNavigation } from '@react-navigation/native';
+import { LikedButton } from '../LikedButton/LikedButton';
 
+interface CardRowProps {
+  title: string;
+  overview: string;
+  posterPath: string;
+  onPress: () => void;
+}
 
-
-export function CardRow({onPress} : propsCardColumn) {
-  const navigation = useNavigation();
+export function CardRow({ title, overview, posterPath, onPress }: CardRowProps) {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => {navigation.navigate('Detalhes')}}>
-        <CardImg style={styles.img} source={0}/>
-        <CardInfo style={styles.cardInfo}/>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <Image
+        source={{ uri: `https://image.tmdb.org/t/p/w500${posterPath}` }}
+        style={styles.img}
+      />
+      <View style={styles.cardInfo}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.overview}>{overview}</Text>
+      </View>
+      <LikedButton style={styles.likeButton} />
     </TouchableOpacity>
   );
 }

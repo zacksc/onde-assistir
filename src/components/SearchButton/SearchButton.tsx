@@ -7,17 +7,12 @@ interface SearchButtonProps {
   onPress: () => void;
 }
 
-export function SearchButton({onPress}: SearchButtonProps) {
-  const navigation = useNavigation();
-
+export function SearchButton({ onPress }: SearchButtonProps) {
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center'}}>
-    <TouchableOpacity
-    style={styles.button}
-    onPress={onPress}
-    >
-       <Text style={styles.buttonText}>Pesquisar</Text>
-    </TouchableOpacity>
+    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
+        <Text style={styles.buttonText}>Pesquisar</Text>
+      </TouchableOpacity>
     </View>
   );
 }

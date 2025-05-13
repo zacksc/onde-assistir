@@ -3,17 +3,33 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 100,
-    width: 280,
+    padding: 10,
     alignItems: 'center',
-    textAlign: 'center',
-    backgroundColor: '#DCDCDC',
-    borderRadius: 5,
-    marginBottom: 30,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    marginBottom: 10,
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 20,
-    paddingTop: 10,
-  }
+    fontSize: 16,
+    paddingBottom: 10,
+  },
+  logoContainer: {
+    alignItems: 'center',
+    marginHorizontal: 5,
+  },
+  logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+  },
+  logoName: {
+    fontSize: 12,
+    textAlign: 'center',
+  },
+  logoFallback: {
+    fontSize: 12,
+    color: '#888',
+    textAlign: 'center',
+  },
 });
