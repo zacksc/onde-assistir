@@ -1,6 +1,8 @@
 # Onde Assistir
 
-<img src="./assets/demoTelas.gif" alt="Demonstração do App" width="300"/>
+<p align="center">
+  <img src="./assets/demoTelas.gif" alt="Demonstração do App" width="600"/>
+</p>
 
 ## 🎯 Objetivo do App
 
