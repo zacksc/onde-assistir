@@ -1,6 +1,6 @@
 # Onde Assistir
 
-<img src="./assets/demoTelas.gif" alt="Demonstração do App" width="600"/>
+<img src="./assets/demoTelas.gif" alt="Demonstração do App" width="300"/>
 
 ## 🎯 Objetivo do App
 
@@ -49,7 +49,7 @@ O **Onde Assistir** é um aplicativo que permite ao usuário buscar filmes e sé
 
 ```bash
 onde-assistir/
-├── assets/
+├── assets/             # Imagens e recursos estáticos
 ├── src/
 │   ├── components/     # Componentes reutilizáveis (ex: botões, cards)
 │   ├── screens/        # Telas da aplicação (ex: Home, Detalhes)
