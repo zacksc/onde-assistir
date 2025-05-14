@@ -31,4 +31,9 @@ export const styles = StyleSheet.create({
   likeButton: {
     marginLeft: 10,
   },
+  rightButton: {
+    marginLeft: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

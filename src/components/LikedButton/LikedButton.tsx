@@ -1,30 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { TouchableOpacity, View, TouchableOpacityProps, StyleProp } from 'react-native';
-
 import { styles } from './LikedButtonStyle';
-
 import { Entypo } from '@expo/vector-icons';
 
-interface LikedButtonStyle {
-  style?: StyleProp<TouchableOpacityProps>;
+interface LikedButtonProps extends TouchableOpacityProps {
+  filled?: boolean;
+  style?: StyleProp<any>;
 }
 
-export function LikedButton({style} : TouchableOpacityProps) {
-
-  const [isLiked, setIsLiked] = useState('heart-outlined')
-
-  function handleLikedButton() {
-    if(isLiked === 'heart-outlined'){
-      setIsLiked('heart');
-    } if (isLiked === 'heart') {
-      setIsLiked('heart-outlined');
-    }
-  }
-
+export function LikedButton({ style, filled, ...props }: LikedButtonProps) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={handleLikedButton} style={style}>
-          <Entypo name={isLiked}  size={30} color={'#FF007F'}/>
+      <TouchableOpacity style={style} {...props}>
+        <Entypo
+          name={filled ? 'heart' : 'heart-outlined'}
+          size={30}
+          color={'#FF007F'}
+        />
       </TouchableOpacity>
     </View>
   );

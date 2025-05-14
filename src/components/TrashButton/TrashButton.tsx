@@ -1,20 +1,24 @@
-import React, {useState} from 'react';
-import { StyleProp, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; // Ou qualquer biblioteca de ícones que você esteja usando
 
-import { styles } from './TrashButtonStyle';
-import { Feather } from '@expo/vector-icons';
-interface TrashButtonStyle {
-  style?: StyleProp<TouchableOpacityProps>;
-}
+type TrashButtonProps = {
+  onPress: () => void;
+  style?: object;
+};
 
-
-export function TrashButton({style} : TrashButtonStyle) {
-   
+export const TrashButton: React.FC<TrashButtonProps> = ({ onPress, style }) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity  style={style}>
-          <Feather name={'trash-2'}  size={30} color={'grey'}/>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
+      <Ionicons name="trash-outline" size={24} color="red" /> {/* Ícone de lixeira corrigido */}
+    </TouchableOpacity>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  button: {
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

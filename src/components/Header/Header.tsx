@@ -11,7 +11,7 @@ export function Header() {
       <View style={styles.container}>
       <Logo />
     <Text style={styles.text}>
-      Quer assistir a um filme ou série e não sabe onde encontrar?
+      Quer assistir a um filme e não sabe onde encontrar?
     </Text>
       </View>
     </ SafeAreaView>

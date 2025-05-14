@@ -1,5 +1,7 @@
 # Onde Assistir
 
+<img src="./assets/demoTelas.gif" alt="Demonstração do App" width="600"/>
+
 ## 🎯 Objetivo do App
 
 O **Onde Assistir** é um aplicativo que permite ao usuário buscar filmes e séries e descobrir em quais plataformas de streaming eles estão disponíveis. Ele visa facilitar o acesso a informações centralizadas sobre serviços como Netflix, Prime Video, Disney+, entre outros, economizando tempo e evitando a busca manual em cada plataforma.
@@ -47,7 +49,7 @@ O **Onde Assistir** é um aplicativo que permite ao usuário buscar filmes e sé
 
 ```bash
 onde-assistir/
-├── assets/             # Imagens e recursos estáticos
+├── assets/
 ├── src/
 │   ├── components/     # Componentes reutilizáveis (ex: botões, cards)
 │   ├── screens/        # Telas da aplicação (ex: Home, Detalhes)
