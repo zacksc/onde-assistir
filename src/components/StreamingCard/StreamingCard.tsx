@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, Image, FlatList } from 'react-native';
-import { styles } from './StreamingCardStyle';
+import React from 'react'
+import { View, Text, Image, FlatList } from 'react-native'
+import { styles } from './StreamingCardStyle'
 
 interface StreamingCardProps {
-  providers: { name: string; logo: string | null }[];
+  providers: { name: string; logo: string | null }[]
 }
 
 export function StreamingCard({ providers }: StreamingCardProps) {
@@ -30,5 +30,5 @@ export function StreamingCard({ providers }: StreamingCardProps) {
         <Text>Nenhum provedor disponível</Text>
       )}
     </View>
-  );
+  )
 }

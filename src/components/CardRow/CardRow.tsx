@@ -1,23 +1,19 @@
-import React from 'react';
-import { TouchableOpacity, View, Text, Image } from 'react-native';
-import { styles } from './CardRowStyle';
+import React from 'react'
+import { TouchableOpacity, View, Text, Image } from 'react-native'
+import { styles } from './CardRowStyle'
+import { truncate } from '../../utils/truncate'
 
 interface CardRowProps {
-  title: string;
-  overview: string;
-  posterPath: string;
-  onPress: () => void;
-  rightButton?: React.ReactNode; // Botão adicional no lado direito
-}
-
-function truncate(text: string, maxLength: number) {
-  if (!text) return '';
-  return text.length > maxLength ? text.slice(0, maxLength - 3) + '...' : text;
+  title: string
+  overview: string
+  posterPath: string
+  onPress: () => void
+  rightButton?: React.ReactNode
 }
 
 export function CardRow({ title, overview, posterPath, onPress, rightButton }: CardRowProps) {
   if (!title || !posterPath) {
-    return null; // Não renderiza o componente se os dados estiverem ausentes
+    return null
   }
 
   return (
@@ -29,10 +25,10 @@ export function CardRow({ title, overview, posterPath, onPress, rightButton }: C
       <View style={styles.cardInfo}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.overview}>
-          {truncate(overview, 210)} {/* Altere 100 para o limite desejado */}
+          {truncate(overview, 210)}
         </Text>
       </View>
       {rightButton && <View style={styles.rightButton}>{rightButton}</View>}
     </TouchableOpacity>
-  );
+  )
 }
